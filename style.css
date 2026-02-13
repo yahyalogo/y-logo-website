@@ -70,6 +70,7 @@ body {
     display: flex;
     list-style: none;
     gap: 30px;
+    align-items: center;
 }
 
 .nav-menu a {
@@ -97,6 +98,26 @@ body {
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+/* أيقونة الحساب في شريط التنقل */
+.account-item {
+    margin-right: 15px;
+}
+
+.account-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    /* بما أن الأيقونة المرفوعة بيضاء، سنجعلها سوداء لتناسب شريط التنقل الأبيض */
+    filter: brightness(0);
+}
+
+.account-icon:hover {
+    transform: scale(1.1);
+    filter: brightness(0.2);
 }
 
 /* القسم الرئيسي */
@@ -297,19 +318,8 @@ section {
     gap: 60px;
 }
 
-.contact-item {
-    margin-bottom: 30px;
-}
-
-.contact-item h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.contact-item p {
-    color: #666;
+.contact-info p {
+    margin-bottom: 15px;
     font-size: 1.1rem;
 }
 
@@ -364,29 +374,6 @@ section {
     text-align: center;
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.footer-logo .small-logo {
-    background: none; /* إزالة الخلفية السوداء من الشعار في التذييل */
-    color: initial; /* إعادة تعيين لون النص إذا كان موجودًا */
-}
-
-.footer-logo span {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
 /* تصميم متجاوب */
 @media (max-width: 768px) {
     .nav-menu {
@@ -414,44 +401,4 @@ section {
     .section-header h2 {
         font-size: 2rem;
     }
-}
-
-@media (max-width: 480px) {
-    .hero-logo-img {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .showcase-logo-img {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-
-
-/* أيقونة الحساب في شريط التنقل */
-.nav-menu li.account-item {
-    margin-left: 15px; /* تباعد بسيط بين الروابط */
-}
-
-.nav-menu li.account-item a {
-    display: flex;
-    align-items: center;
-}
-
-.account-icon {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.account-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
